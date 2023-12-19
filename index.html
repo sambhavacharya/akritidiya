@@ -1,0 +1,449 @@
+YPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: medium;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+            font-size: small;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        header {
+            background: #3498db;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .container-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-left img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .header-right {
+            text-align: left;
+        }
+
+        .header-right h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .header-right h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #fff;
+            background: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            transition: background0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .header-social {
+            margin-top: 20px;
+        }
+
+        .header-social a {
+            margin-right: 10px;
+        }
+
+        .header-social img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .header-social img:hover {
+            transform: scale(1.2);
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .heading-p {
+            color: #e74c3c;
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .heading {
+            color: #333;
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        main {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        main pre {
+            white-space: pre-wrap;
+            line-height: 1.5;
+            font-size: 1.1em;
+            color:  ;
+        }
+
+        .know-more-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .options-container {
+            display: none;
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            z-index: 999;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .option {
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Styling for 3D buttons */
+        .btn-3d {
+            display: inline-block;
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 10px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer ;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-3d:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #3498db;
+            transform-origin: bottom right;
+            
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-3d:hover:before {
+            transform: skewX(45deg) scale(1.1);
+        }
+
+        .btn-3d:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Navbar-->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Sambhav and Aarohan</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100090433629936" target="_blank">Contact Me</a></li>
+                <li><a href="mailto:acharyasambhav01@gmail.com">Gmail</a></li>
+
+            </ul>
+        </div>
+    </nav>
+    <!--End Navbar-->
+
+    <!-- Buttons for Aarohan and Sambhav -->
+    <div class="btn-3d" onclick="showAarohan()">Know Aarohan</div>
+    <div class="btn-3d" onclick="showSambhav()">Know Sambhav</div>
+
+    <!--about section-->
+    <section>
+        <p class="heading-p">Get to know more</p>
+        <h1 class="heading">About Us</h1>
+    </section>
+    <main>
+        <pre>
+            <b>
+
+ Introduction:
+Hello there! We are Sambhav Acharya and Aarohan Poudel, a passionate and ambitious front-end web developer and a backend web-developer with over 2 years of hands-on experience. What makes my journey unique? Well, I'm not your typical developer – I'm just 14 years old and currently juggling my time between school and coding. Let me take you on a brief tour of my skills, projects, and the enthusiasm I bring to the world of web development.
+                
+Skills:
+Front-End Technologies:
+Languages: Proficient in HTML, CSS, and JavaScript.
+Frameworks & Libraries: Familiar with Bootstrap and jQuery.
+Responsive Design: Ensuring seamless user experience across various devices.
+Development Tools:
+Code Editors: Proficient in using VS Code for efficient coding.
+Version Control: Experience with Git for collaborative projects.
+Soft Skills:
+Problem-Solving: Adept at finding creative solutions to coding challenges.
+Adaptability: Quick to learn and implement new technologies.
+Communication: Effective communication skills for collaboration.
+
+Projects:
+Personal Portfolio Website:
+Developed a responsive and dynamic portfolio showcasing skills, projects, and achievements.
+Implemented smooth transitions and animations for an engaging user experience.
+Interactive Quiz App:
+Created an interactive quiz application using JavaScript to test users on various topics.
+Incorporated dynamic scoring and feedback mechanisms for an engaging user experience.
+School Club Website:
+Collaborated with peers to develop a website for a school club.
+Implemented features like event calendars, member profiles, and a blog section.
+
+Education:
+Currently, I am a dedicated student balancing my academic responsibilities with my passion for web development. I recognize the importance of continuous learning and stay updated with the latest industry trends and technologies.
+
+Future Aspirations:
+As a 14-year-old aspiring front-end web developer, I am excited about the journey ahead. My goal is to further enhance my skills, delve into back-end development, and contribute to meaningful projects. I am eager to explore internship opportunities, connect with fellow developers, and make a positive impact in the tech community.
+
+Contact:
+Connect with me on Facebook | Instagram | Email
+
+Thank you for taking the time to explore my portfolio. I am enthusiastic about the possibilities that lie ahead in the world of web development, and I'm ready to bring my skills and creativity to new challenges!
+</b>
+</pre>
+</main>
+
+    <!-- Know More Button -->
+    <button class="know-more-btn" onclick="toggleOptions()">Get to know more</button>
+
+    <!-- Options Container -->
+    <div class="options-container" id="optionsContainer">
+        <div class="option" onclick="showAarohan()">Know Aarohan</div>
+        <div class="option" onclick="showSambhav()">Know Sambhav</div>
+    </div>
+
+    <script>
+        function toggleOptions() {
+            var optionsContainer = document.getElementById("optionsContainer");
+            optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
+        }
+
+        function showAarohan() {
+            // Redirect to the Aarohan section (replace with the appropriate section ID or URL)
+            window.location.href = "aarohan.html";
+        }
+
+        function showSambhav() {
+            // Redirect to the Sambhav section (replace with the appropriate section ID or URL)
+            // For now, scroll to the introduction section
+            var introductionSection = document.getElementById("introduction-section");
+            introductionSection.scrollIntoView({ behavior: "smooth" });
+
+            // Hide the options container after redirection
+            var optionsContainer = document.getElementById("optionsContainer");
+            optionsContainer.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #317031, #4c4d4c);
+            color: white;
+            text-align: center;
+            overflow: hidden; /* Disable scrolling by default */
+        }
+
+        .login-container {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #2980b9, #2374a8);
+        }
+
+        #login-message {
+            margin-top: 10px;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginContainer" class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="validateLogin(); return false;">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-message"></p>
+    </div>
+
+    <div id="mainContent" style="display:none;">
+        
+    </div>
+
+    <script>
+        // Check if the user is already authenticated
+        const isAuthenticated = sessionStorage.getItem('authenticated');
+
+        // If authenticated, show the main content
+        if (isAuthenticated) {
+            document.getElementById("loginContainer").style.display = "none";
+            document.getElementById("mainContent").style.display = "block";
+            // Enable scrolling
+            document.body.style.overflow = "auto";
+        }
+
+        function validateLogin() {
+            var usernameInput = document.getElementById("username").value;
+            var passwordInput = document.getElementById("password").value;
+            var loginMessage = document.getElementById("login-message");
+            var loginContainer = document.getElementById("loginContainer");
+            var mainContent = document.getElementById("mainContent");
+
+            if (usernameInput === "akritidiya" && passwordInput === "akritidiya@123") {
+                loginMessage.style.color = "#2ecc71"; // Green color for success
+                loginMessage.textContent = "Login successful! Redirecting...";
+                // Hide the login container after a successful login
+                loginContainer.style.display = "none";
+                // Show the main content
+                mainContent.style.display = "block";
+                // Enable scrolling
+                document.body.style.overflow = "auto";
+                // Store authentication status in session storage
+                sessionStorage.setItem('authenticated', true);
+            } else {
+                loginMessage.style.color = "#e74c3c"; // Red color for failure
+                loginMessage.textContent = "Invalid username or password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
